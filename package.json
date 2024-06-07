@@ -1,0 +1,23 @@
+{
+  "name": "hotels_crud",
+  "version": "1.0.0",
+  "description": "test task for hotels.ru",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/evgenytr/hotels_crud.git"
+  },
+  "author": "Evgeny Trefilov",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/evgenytr/hotels_crud/issues"
+  },
+  "homepage": "https://github.com/evgenytr/hotels_crud#readme",
+  "dependencies": {
+    "sqlite3": "^5.1.7"
+  }
+}
