@@ -2,11 +2,7 @@ let users = {};
 let currId = 0;
 
 function getUsers() {
-    let result = [];
-    for(let prop in users) {
-        result.push(users[prop]);
-        return users;
-    }
+   return users;
 }
 
 function addUser(user) {

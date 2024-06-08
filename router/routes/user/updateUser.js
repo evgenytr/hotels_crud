@@ -22,7 +22,7 @@ function updateUser(req,res,storage){
         body+=chunk;
     });
 
-    req.on('end', ()=>{
+    req.on('end', async ()=>{
         let parsedBody;
         try{
         parsedBody = JSON.parse(body);
@@ -32,7 +32,7 @@ function updateUser(req,res,storage){
             return;
         }
 
-        user = storage.updateUser(parsedBody);
+        user = await storage.updateUser(id, parsedBody);
         if(user===null) {
             res.writeHead(404);
             res.end(JSON.stringify({"message":`user with id ${id} not found`}));

@@ -1,6 +1,6 @@
 const url = require('url');
 
-function getUser(req,res,storage){
+async function getUser(req,res,storage){
     const parsedUrl = url.parse(req.url,true);
     const pathname = parsedUrl.pathname;
     const parsedPath = pathname.split('/');
@@ -16,7 +16,7 @@ function getUser(req,res,storage){
         return;
     }
 
-    const result = storage.getUserByID(id);
+    const result = await storage.getUserByID(id);
     if(result===null){
         res.writeHead(404);
         res.end(JSON.stringify({"message":`User with id ${id} doesn't exist`}));

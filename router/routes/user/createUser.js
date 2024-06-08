@@ -6,7 +6,7 @@ function createUser(req,res,storage) {
         body+=chunk;
     });
 
-    req.on('end', ()=>{
+    req.on('end', async ()=>{
         let parsedBody;
         
         try{
@@ -28,7 +28,7 @@ function createUser(req,res,storage) {
         }
 
         let user = {name:parsedBody.name, age:parseInt(parsedBody.age)};
-        user = storage.addUser(user);
+        user = await storage.addUser(user);
         res.writeHead(201);
         res.end(JSON.stringify(user));
 

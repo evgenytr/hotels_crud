@@ -18,6 +18,6 @@
   },
   "homepage": "https://github.com/evgenytr/hotels_crud#readme",
   "dependencies": {
-    "sqlite3": "^5.1.7"
+    "pg": "^8.12.0"
   }
 }
